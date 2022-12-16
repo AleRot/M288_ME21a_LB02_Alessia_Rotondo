@@ -101,3 +101,5 @@ eingabefeld.addEventListener("keydown", function (ereignis) {
         rechnenButton.click();
     }
 });
+
+
