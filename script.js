@@ -51,6 +51,7 @@ for (const taste of tasten){
             case "=":
                 try {
                     // Das Ergebnis der eingegebenen Rechnung ermitteln
+                    rechnung=eingabefeld.value;
                     const ergebnis = new Function("return " + eingabefeld.value.replaceAll(",", "."))();
 
                     // Das Ergebnis in das Eingabefeld schreiben
@@ -64,6 +65,15 @@ for (const taste of tasten){
 
                     // Fehlerklasse von der Rechenweg-Anzeige nehmen
                     rechenwegAnzeige.classList.remove(FEHLER_KLASSE);
+
+                    let rechnungjson = '{ "rechnung" : [' +
+                        '{ "eingabe":'+rechnung+' , "ergebnis":'+eingabefeld.value+'} ]}';
+                    console.log(rechnungjson);
+                    localStorage.setItem('rechnung', JSON.stringify(rechnungjson));
+
+
+
+
                 } catch {
                     // Fehlermeldung in die Rechenweg-Anzeige schreiben
                     rechenwegAnzeige.textContent = "Ungültige Eingabe!";
