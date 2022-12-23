@@ -66,11 +66,10 @@ for (const taste of tasten){
                     // Fehlerklasse von der Rechenweg-Anzeige nehmen
                     rechenwegAnzeige.classList.remove(FEHLER_KLASSE);
 
-                    let rechnungjson = '{ "rechnung" : [' +
-                        '{ "eingabe":'+rechnung+' , "ergebnis":'+eingabefeld.value+'} ]}';
+                    let rechnungjson = '{ rechnung : eingabe:'+rechnung+' , ergebnis:'+eingabefeld.value+' }';
                     console.log(rechnungjson);
                     localStorage.setItem('rechnung', JSON.stringify(rechnungjson));
-
+                    //document.getElementById("eingabefeld.value").innerHTML = rechnung.result;
 
 
 
