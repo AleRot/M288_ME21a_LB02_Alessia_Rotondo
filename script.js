@@ -66,6 +66,8 @@ for (const taste of tasten){
                     // Fehlerklasse von der Rechenweg-Anzeige nehmen
                     rechenwegAnzeige.classList.remove(FEHLER_KLASSE);
 
+
+                    // JSON eingerichtet
                     let rechnungjson = '{ rechnung : eingabe:'+rechnung+' , ergebnis:'+eingabefeld.value+' }';
                     console.log(rechnungjson);
                     localStorage.setItem('rechnung', JSON.stringify(rechnungjson));
